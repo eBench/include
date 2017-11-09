@@ -1,0 +1,43 @@
+/* Organism – Menu */
+
+.site-menu,
+.secondary-links {
+	margin-top: 4em;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 2.5em;
+  font-weight: 500;
+  line-height: 1.175;
+  letter-spacing: -1px;
+	.menu-item {
+		margin-bottom: .5em;
+	}
+	a {
+		display: block;
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	@media screen and (max-width: 1024px) {
+    font-size: 2.25em;
+  }
+  @media screen and (max-width: 800px) {
+    font-size: 2em;
+    letter-spacing: 0;
+  }
+  @media screen and (max-width: 480px) {
+    font-size: 1.75em;
+  }
+}
+
+.secondary-links {
+	margin-top: 2em;
+	font-size: 1.75em;
+  letter-spacing: 0;
+  @media screen and (max-width: 800px) {
+    font-size: 1.625em;
+  }
+  @media screen and (max-width: 480px) {
+    font-size: 1.5em;
+  }
+}

@@ -1,0 +1,127 @@
+/* Typography */
+
+body {
+  color: $gray-800;
+	font-family: 'Arimo', sans-serif; 
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.5;
+}
+
+h1, 
+h2,
+h3,
+h4 {
+  color: $purple;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  line-height: 1.175;
+  letter-spacing: -1px;
+}
+
+h1 {
+	font-size: 3.25em;
+  @media screen and (max-width: 1024px) {
+    font-size: 2.75em;
+  }
+  @media screen and (max-width: 800px) {
+    font-size: 2.5em;
+  }
+  @media screen and (max-width: 480px) {
+    font-size: 2.25em;
+  }
+}
+
+h2 {
+  font-size: 2.5em;
+  @media screen and (max-width: 1024px) {
+    font-size: 2.25em;
+  }
+  @media screen and (max-width: 800px) {
+    font-size: 2em;
+    letter-spacing: 0;
+  }
+  @media screen and (max-width: 480px) {
+    font-size: 1.75em;
+  }
+}
+
+h3 {
+  font-size: 1.75em;
+  letter-spacing: 0;
+  @media screen and (max-width: 800px) {
+    font-size: 1.625em;
+  }
+  @media screen and (max-width: 480px) {
+    font-size: 1.5em;
+  }
+}
+
+h4 {
+  font-size: 1.25em;
+  letter-spacing: 0;
+}
+
+/* Extra large display size */
+
+.display {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 5em;
+  @media screen and (max-width: 1024px) {
+    font-size: 3.75em;
+  }
+}
+
+/* Background text pattern */
+
+.text-bg {
+  background: url('../../assets/images/text-bg.png') repeat 0 0;
+  -webkit-font-smoothing:antialiased;
+  -webkit-background-clip:text;
+  -moz-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+p {
+  max-width: 680px;
+}
+
+p a,
+.text-link {
+  color: $blue;
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.text-large {
+  font-size: 1.25em;
+  @media screen and (max-width: 640px) {
+    font-size: 1.125em;
+  }
+}
+
+strong {
+  font-weight: 700;
+}
+
+i {
+  font-style: italic;
+}
+
+abbr {
+  border-bottom: 1px dotted $gray-400;
+  text-decoration: none;
+}
+
+blockquote {
+  color: $green;
+  font-size: 1.5em;
+  font-style: italic;
+  text-align: center;
+  @media screen and (max-width: 480px) {
+    font-size: 1.25em;
+  }
+}

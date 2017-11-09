@@ -1,0 +1,76 @@
+/* Utilities */
+
+/* Clear fix */
+
+.clearfix {
+  &::after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+}
+
+/* Circular images */
+
+.image-circle {
+	border-radius: 50%;
+}
+
+/* Rounded corners */
+
+.rounded {
+	border-radius: 3px;
+}
+
+/* Background colors */
+
+.bg-purple        {background-color: $purple}
+.bg-blue          {background-color: $blue}
+.bg-green         {background-color: $green}
+.bg-sunflower     {background-color: $sunflower}
+.bg-amber         {background-color: $amber}
+.bg-dark-blue     {background-color: $dark-blue}
+.bg-light-blue    {background-color: $light-blue}
+.bg-light-purple  {background-color: $light-purple}
+
+/* Text color */
+
+.color-purple     {color: $purple !important;}
+.color-blue       {color: $blue !important;}
+.color-green      {color: $green !important;}
+.color-sunflower  {color: $sunflower !important;}
+.color-amber      {color: $amber !important;}
+.color-light-gray {color: $gray-600 !important;}
+
+/* Vertical spacing */
+
+.mt-1 {margin-top: .5em;}
+.mt-2 {margin-top: 1em;}
+.mt-3 {margin-top: 2em;}
+.mt-4 {margin-top: 4em;}
+.mt-5 {margin-top: 6em;}
+.mt-6 {margin-top: 8em;}
+
+.mb-1 {margin-bottom: .5em;}
+.mb-2 {margin-bottom: 1em;}
+.mb-3 {margin-bottom: 2em;}
+.mb-4 {margin-bottom: 4em;}
+.mb-5 {margin-bottom: 6em;}
+.mb-6 {margin-bottom: 8em;}
+
+/* Text alignment */
+
+.text-left {
+	text-align: left;
+}
+
+.text-center {
+	text-align: center;
+	p {
+		margin: 0 auto;
+	}
+}
+
+.text-right {
+	text-align: right;
+}

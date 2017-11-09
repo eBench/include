@@ -1,0 +1,157 @@
+/* Forms */
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: .563em .5em;
+  font-size: 1em;
+  line-height: 1.25em;
+  color: $gray-800;
+  background-color: $gray-100;
+  // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214.
+  background-image: none;
+  background-clip: padding-box;
+  border: 1px solid $gray-400;
+  border-radius: 3px;
+  transition: .25s;
+
+  // Unstyle the caret on `<select>`s in IE10+.
+  &::-ms-expand {
+    background-color: transparent;
+    border: 0;
+  }
+
+  // Placeholder
+  &::placeholder {
+    color: $gray-600;
+    // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+    opacity: 1;
+  }
+
+  // Customize the `:focus` state to imitate native WebKit styles.
+  &:focus {
+  	color: $gray-900;
+    background-color: #fff;
+    border-color: $blue;
+    outline: none;
+    box-shadow: none;
+  }
+
+  // Disabled and read-only inputs
+  //
+  // HTML5 says that controls under a fieldset > legend:first-child won't be
+  // disabled if the fieldset is disabled. Due to implementation difficulty, we
+  // don't honor that edge case; we style them as disabled anyway.
+  &:disabled,
+  &[readonly] {
+    background-color: $gray-200;
+    // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
+    opacity: 1;
+  }
+}
+
+select.form-control {
+  &:not([size]):not([multiple]) {
+    height: 36px;
+  }
+
+  &:focus::-ms-value {
+    // Suppress the nested default white text on blue background highlight given to
+    // the selected option text when the (still closed) <select> receives focus
+    // in IE and (under certain conditions) Edge, as it looks bad and cannot be made to
+    // match the appearance of the native widget.
+    // See https://github.com/twbs/bootstrap/issues/19398.
+    color: $gray-900;
+    background-color: $gray-100;
+  }
+}
+
+// Make file inputs better match text inputs by forcing them to new lines.
+.form-control-file,
+.form-control-range {
+  display: block;
+}
+
+//
+// Labels
+//
+
+// For use with horizontal and inline forms, when you need the label text to
+// align with the form controls.
+.form-group label {
+  padding-top: .5em;
+  padding-bottom: .5em;
+  line-height: 2.5;
+  font-weight: 700;
+}
+
+// Form groups
+//
+// Designed to help with the organization and spacing of vertical forms. For
+// horizontal forms, use the predefined grid classes.
+
+.form-group {
+  margin-bottom: 1.5em;
+}
+
+.form-text {
+  display: block;
+  margin-top: .25em;
+}
+
+
+// Form grid
+//
+// Special replacement for our grid system's `.row` for tighter form layouts.
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -5px;
+  margin-left: -5px;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+}
+
+
+// Checkboxes and radios
+//
+// Indent the labels to position radios/checkboxes as hanging controls.
+
+.form-check {
+  position: relative;
+  display: block;
+  margin-bottom: .5em;
+
+  &.disabled {
+    .form-check-label {
+      color: $gray-600;
+    }
+  }
+}
+
+.form-check-label {
+  padding-left: 1em;
+  margin-bottom: 0; // Override default `<label>` bottom margin
+}
+
+.form-check-input {
+  position: absolute;
+  margin-top: .5em;
+  margin-left: .5em;
+}
+
+// Radios and checkboxes on same line
+.form-check-inline {
+  display: inline-block;
+  margin-right: .5em;
+
+  .form-check-label {
+    vertical-align: middle;
+  }
+}
+

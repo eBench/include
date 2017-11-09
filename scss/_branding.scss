@@ -1,0 +1,23 @@
+/* Branding */
+
+/* Logo */
+
+.logo-include-org,
+.logo-include-choir {
+	@media screen and (max-width: 640px) {
+		height: 48px;
+	}
+}
+
+/* Multi-color bar */
+
+.multi-color-bar {
+	background: url("../../assets/images/multi-color-bar.png") repeat center;
+ 	height: 6px;
+ 	width: 100%;
+ 	border: 0;
+ 	margin: 0;
+ 	@media screen and (max-width: 640px) {
+		height: 4px;
+	}
+}

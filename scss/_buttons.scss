@@ -1,0 +1,77 @@
+/* Buttons */
+
+.btn {
+  display: inline-block;
+  background-color: $blue;
+  padding: .938em 1.5em;
+  color: #fff;
+  font-size: 1em !important;
+  font-weight: 700;
+  letter-spacing: .5px;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: .25s;
+  text-decoration: none;
+  &:focus,
+  &.focus {
+    outline: 0;
+  }
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    opacity: .65;
+  }
+  &:hover {
+  	background-color: lighten($blue, 10%);
+  }
+  @media screen and (max-width: 640px) {
+    padding: .688em 1em;
+  }
+}
+
+.btn-positive {
+	background-color: $green;
+	&:hover {
+  	background-color: lighten($green, 10%);
+  }
+}
+
+/* Block buttons */
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+  margin-top: .75em;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn-block {
+    width: 100%;
+  }
+}
+
+/* Buttons with icons */
+
+.btn {
+	.fa {
+    color: #fff;
+		margin-right: .75em;
+	}
+	// Apply to icon class
+	.fa.icon-right {
+		margin-right: 0;
+		margin-left: .75em;
+	}
+}

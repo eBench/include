@@ -1,0 +1,26 @@
+/* Organism – Call to action block */
+
+.cta {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+  align-items: center;
+  align-content: center;
+	padding-top: 4em;
+	padding-bottom: 4em;
+	h3,
+	p {
+		margin-bottom: 1em;
+		text-align: center;
+	}
+	p {
+		margin-bottom: 2em;
+	}
+	.btn {
+		background-color: $purple;
+		transition: .25s;
+		&:hover {
+			background-color: lighten($purple, 10%);
+		}
+	}
+}

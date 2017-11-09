@@ -1,0 +1,40 @@
+// Variables
+
+$gray-100:     #f8f9fa !default;
+$gray-200:     #e9ecef !default;
+$gray-300:     #dee2e6 !default;
+$gray-400:     #ced4da !default;
+$gray-500:     #adb5bd !default;
+$gray-600:     #868e96 !default;
+$gray-700:     #495057 !default;
+$gray-800:     #343a40 !default;
+$gray-900:     #212529 !default;
+
+$blue:         #0879b5 !default;
+$purple:       #803fc3 !default;
+$amber:        #d55219 !default;
+$sunflower:  	 #f69516 !default;
+$green:        #5fb346 !default;
+$dark-blue:  	 #00476d !default;
+$light-blue: 	 #f2fbff !default;
+$light-purple: #f8f1ff !default;
+
+// Imports
+
+@import 'boxouts';
+@import 'branding';
+@import 'buttons';
+@import 'forms';
+@import 'grid';
+@import 'icons';
+@import 'main-content';
+@import 'organism-cta';
+@import 'organism-footer';
+@import 'organism-header';
+@import 'organism-masthead';
+@import 'organism-menu';
+@import 'organism-quote';
+@import 'reset';
+@import 'stats';
+@import 'typography';
+@import 'utilities';

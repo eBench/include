@@ -1,0 +1,61 @@
+/* Boxouts */
+
+.boxout {
+	display: flex;
+	flex-direction: column;
+  align-items: center;
+	padding: 2.5em 2em;
+	margin: .5em;
+	border-radius: 6px;
+	a:link,
+	a:visited {
+		color: #fff;
+		text-decoration: none;
+	}
+	h3,
+	p {
+		max-width: 480px;
+		text-align: center;
+	}
+	h3 {
+		margin-top: .5em;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	p {
+		font-size: 1.125em;
+		margin-top: 1em;
+		opacity: .8;
+		transition: .25s;
+		&:hover {
+			opacity: 1;
+		}
+	}
+	@media screen and (max-width: 640px) {
+    padding: 2em 1.5em;
+  }
+}
+
+.bg-pattern-1 {
+	background-image: url('../../assets/images/bg-pattern-1.png');
+}
+
+.bg-pattern-2 {
+	background-image: url('../../assets/images/bg-pattern-2.png');
+}
+
+.bg-pattern-3 {
+	background-image: url('../../assets/images/bg-pattern-3.png');
+}
+
+.bg-pattern-4 {
+	background-image: url('../../assets/images/bg-pattern-4.png');
+}
+
+.boxouts {
+	margin: 0 .5em .5em .5em !important;
+  .col {
+  	flex-shrink: 1;
+  }
+}

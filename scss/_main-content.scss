@@ -1,0 +1,39 @@
+/* Main content */
+
+
+.main-content {
+	margin-bottom: 6em;
+	img {
+		width: 100%;
+		height: auto;
+		margin-bottom: 1.5em;
+		border-radius: 3px;
+	}
+	p {
+		font-size: 1.25em;
+		margin-bottom: 1em;
+	}
+	ul.bullets {
+		font-size: 1.25em;
+		margin-bottom: 1em;
+		li {
+			margin: 0 0 .25em 4em;
+			@media screen and (max-width: 640px) {
+		    margin-left: 3em;
+		  }
+		  @media screen and (max-width: 480px) {
+		    margin-left: 2em;
+		  }
+		}
+		li::before {
+			content: "•";
+			color: $sunflower;
+		  display: inline-block; 
+		  width: 1em;
+		  margin-left: -1em
+		}
+	}
+	@media screen and (max-width: 640px) {
+    margin-bottom: 4em;
+  }
+}
