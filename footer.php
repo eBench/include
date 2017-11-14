@@ -14,17 +14,15 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'include' ) ); ?>"><?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'include' ), 'WordPress' );
-			?></a>
-			<span class="sep"> | </span>
-			<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'include' ), 'include', '<a href="http://underscores.me/">Underscores.me</a>' );
-			?>
-		</div><!-- .site-info -->
+		<div class="site-footer grid fluid">
+    <h3>Connect with us</h3> <br>
+    <div>
+      <a href="#"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-youtube fa-2x" aria-hidden="true"></i></a>
+    </div>
+  </div>
+		<!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
