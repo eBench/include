@@ -31,16 +31,16 @@
       padding: 2em 1.5em; } }
 
 .bg-pattern-1 {
-  background-image: url("../../assets/images/bg-pattern-1.png"); }
+  background-image: url("./assets/images/bg-pattern-1.png"); }
 
 .bg-pattern-2 {
-  background-image: url("../../assets/images/bg-pattern-2.png"); }
+  background-image: url("./assets/images/bg-pattern-2.png"); }
 
 .bg-pattern-3 {
-  background-image: url("../../assets/images/bg-pattern-3.png"); }
+  background-image: url("./assets/images/bg-pattern-3.png"); }
 
 .bg-pattern-4 {
-  background-image: url("../../assets/images/bg-pattern-4.png"); }
+  background-image: url("./assets/images/bg-pattern-4.png"); }
 
 .boxouts {
   margin: 0 .5em .5em .5em !important; }
@@ -56,7 +56,7 @@
 
 /* Multi-color bar */
 .multi-color-bar {
-  background: url("../../assets/images/multi-color-bar.png") repeat center;
+  background: url("./assets/images/multi-color-bar.png") repeat center;
   height: 6px;
   width: 100%;
   border: 0;
@@ -1019,7 +1019,7 @@ h4 {
 
 /* Background text pattern */
 .text-bg {
-  background: url("../../assets/images/text-bg.png") repeat 0 0;
+  background: url("./assets/images/text-bg.png") repeat 0 0;
   -webkit-font-smoothing: antialiased;
   -webkit-background-clip: text;
   -moz-background-clip: text;
