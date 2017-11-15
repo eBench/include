@@ -60,7 +60,7 @@
 			<?php
 			endif; ?> -->
 				<div class="button-group">
-					<a href="#" class="btn btn-positive" id="get-involved">Get involved</a>
+					<a href="<?php echo esc_url( get_page_link( 63 ) ); ?>" class="btn btn-positive" id="get-involved">Get involved</a>
 					<a class="btn js-menu">Menu<i class="fa fa-bars fa-lg icon-right"></i></a>
 					<a class="btn js-menu" style="display:none">Menu<i class="fa fa-times fa-lg icon-right"></i></a>
 				</div>
@@ -72,7 +72,11 @@
   <div class="grid fluid menu-container">
     <ul class="site-menu">
 			<?php
-		   $args = array('exclude' => '2', 'child_of' => '2');
+		   $args = array(
+				 'meta_key' => 'show_in_menu',
+				 'meta_value' => 'true',
+				 'child_of' => '2',
+			 	 );
 		   $pages = get_pages($args);
 		 	 $index = 0;
 		   foreach ( $pages as $page ) {
