@@ -51,7 +51,7 @@
 		} else if (($index % 5 ) === 0 ) {
 			$box .='amber';
 		};
-		$box .= ' bg-pattern-'. $index .'">';
+		$box .= '">';
 		$box .=	'<img src="' . get_the_post_thumbnail_url($page->ID, 'full') . '" class="image-circle" alt="">
 						<h3> <a href="' . get_page_link( $page->ID ) . '">';
 		if (empty(get_post_meta( $page->ID, 'menu-title', true ))) {
