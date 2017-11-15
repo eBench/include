@@ -33,7 +33,11 @@
 	<div class="row row-equal">
 		<!-- Boxout start -->
  <?php
-  $args = array('exclude' => '2', 'child_of' => '2');
+ $args = array(
+	 'meta_key' => 'show_in_menu',
+	 'meta_value' => 'true',
+	 'child_of' => '2',
+	 );
   $pages = get_pages($args);
 	$index = 0;
   foreach ( $pages as $page ) {

@@ -1,7 +1,7 @@
 <?php
-/* Template name: Inclusive Communication
+/* Template name: Form
  *
- * The template for displaying Home Page
+ * The template for displaying pages with forms
  *
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
@@ -16,7 +16,7 @@ get_header(); ?>
 			<?php
 			while ( have_posts() ) : the_post();
 
-				get_template_part( 'template-parts/content', 'inclusive-communication-page' );
+				get_template_part( 'template-parts/content', 'form-page' );
 
 				// If comments are open or we have at least one comment, load up the comment template.
 				if ( comments_open() || get_comments_number() ) :
