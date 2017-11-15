@@ -24,3 +24,10 @@ $(function(){
 	});
 });
 // end
+
+// Menu
+$( document ).ready(function() {
+	$( ".js-menu" ).click(function() {
+	  $( ".menu-container, .js-menu, .site-content" ).toggle();
+	});
+});

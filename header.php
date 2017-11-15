@@ -60,11 +60,50 @@
 				</nav> -->
 				<div class="button-group">
 					<a href="#" class="btn btn-positive" id="get-involved">Get involved</a>
-					<a href="" class="btn">Menu<i class="fa fa-bars fa-lg icon-right"></i></a>
+					<a class="btn js-menu">Menu<i class="fa fa-bars fa-lg icon-right"></i></a>
+					<a class="btn js-menu" style="display:none">Menu<i class="fa fa-times fa-lg icon-right"></i></a>
 				</div>
 			</div>
 	</header>
-
 <!-- Header end -->
 
+<!-- Menu start -->
+  <div class="grid fluid menu-container">
+    <ul class="site-menu">
+			<?php
+		   $args = array('exclude' => '2');
+		   $pages = get_pages($args);
+		 	 $index = 0;
+		   foreach ( $pages as $page ) {
+		 		$index++;
+		     $link = '<li class="menu-item">';
+		 		$link .=	'<a class="color-';
+		 			if (($index % 5 ) === 1 ) {
+		 				$link .='purple';
+		 			} else if (($index % 5 ) === 2 ) {
+		 				$link .='blue';
+		 			} else if (($index % 5 ) === 3 ) {
+		 				$link .='green';
+		 			} else if (($index % 5 ) === 4 ) {
+		 				$link .='sunflower';
+		 			} else if (($index % 5 ) === 0 ) {
+		 				$link .='amber';
+		 			};
+		 		 $link .= '" href="' . get_page_link( $page->ID ) . '">';
+		     $link .= $page->post_title;
+		 		 $link .= '</a></li>';
+		     echo $link;
+		   }
+		  ?>
+		</ul>      
+    <ul class="secondary-links">
+      <li class="menu-item">
+        <a class="color-blue" href="#">Get involved</a>
+      </li>
+      <li class="menu-item">
+        <a class="color-blue" href="#">Contact us</a>
+      </li>
+    </ul>
+  </div>
+  <!-- Menu end -->
 	<div id="content" class="site-content">
