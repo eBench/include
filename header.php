@@ -34,8 +34,18 @@
 	<header class="fixed fluid-gutterless">
 			<hr class="multi-color-bar">
 			<div class="site-header grid fluid">
-				<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-include-org.svg" class="logo-include-org" alt="Include.org"></a>
 				<?php
+					if (get_the_ID() === 24) {
+					?>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-include-choir.svg" class="logo-include-org" alt="Include.org"></a>
+				<?php
+			} else {
+					?>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-include-org.svg" class="logo-include-org" alt="Include.org"></a>
+				<?php
+					}
+				?>
+				<!-- <?php
 			the_custom_logo();
 			if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -48,16 +58,7 @@
 			if ( $description || is_customize_preview() ) : ?>
 				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 			<?php
-			endif; ?>
-				<!--<nav id="site-navigation" class="main-navigation">
-					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'include' ); ?></button>
-					<?php
-						wp_nav_menu( array(
-							'theme_location' => 'menu-1',
-							'menu_id'        => 'primary-menu',
-						) );
-					?>
-				</nav> -->
+			endif; ?> -->
 				<div class="button-group">
 					<a href="#" class="btn btn-positive" id="get-involved">Get involved</a>
 					<a class="btn js-menu">Menu<i class="fa fa-bars fa-lg icon-right"></i></a>
@@ -71,7 +72,7 @@
   <div class="grid fluid menu-container">
     <ul class="site-menu">
 			<?php
-		   $args = array('exclude' => '2');
+		   $args = array('exclude' => '2', 'child_of' => '2');
 		   $pages = get_pages($args);
 		 	 $index = 0;
 		   foreach ( $pages as $page ) {
