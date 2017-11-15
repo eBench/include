@@ -1,0 +1,33 @@
+<?php
+/* Template name: Home Page
+ *
+ * The template for displaying Home Page
+ *
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package include
+ */
+
+get_header(); ?>
+
+
+
+			<?php
+			while ( have_posts() ) : the_post();
+
+				get_template_part( 'template-parts/content', 'home-page' );
+
+				// If comments are open or we have at least one comment, load up the comment template.
+				if ( comments_open() || get_comments_number() ) :
+					comments_template();
+				endif;
+
+			endwhile; // End of the loop.
+			?>
+
+
+		
+
+<?php
+get_footer();
