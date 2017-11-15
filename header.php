@@ -90,12 +90,16 @@
 		 				$link .='amber';
 		 			};
 		 		 $link .= '" href="' . get_page_link( $page->ID ) . '">';
-		     $link .= $page->post_title;
+				 if (empty(get_post_meta( $page->ID, 'menu-title', true ))) {
+		 				$link .= $page->post_title;
+		 		 } else {
+		 				$link .= get_post_meta( $page->ID, 'menu-title', true );
+		 		 }
 		 		 $link .= '</a></li>';
 		     echo $link;
 		   }
 		  ?>
-		</ul>      
+		</ul>
     <ul class="secondary-links">
       <li class="menu-item">
         <a class="color-blue" href="#">Get involved</a>

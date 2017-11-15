@@ -40,21 +40,25 @@
 		$index++;
     $box = '<div class="col"><div class="boxout';
 		$box .= ' bg-';
-			if (($index % 5 ) === 1 ) {
-				$box .='purple';
-			} else if (($index % 5 ) === 2 ) {
-				$box .='blue';
-			} else if (($index % 5 ) === 3 ) {
-				$box .='green';
-			} else if (($index % 5 ) === 4 ) {
-				$box .='sunflower';
-			} else if (($index % 5 ) === 0 ) {
-				$box .='amber';
-			};
+		if (($index % 5 ) === 1 ) {
+			$box .='purple';
+		} else if (($index % 5 ) === 2 ) {
+			$box .='blue';
+		} else if (($index % 5 ) === 3 ) {
+			$box .='green';
+		} else if (($index % 5 ) === 4 ) {
+			$box .='sunflower';
+		} else if (($index % 5 ) === 0 ) {
+			$box .='amber';
+		};
 		$box .= ' bg-pattern-'. $index .'">';
 		$box .=	'<img src="' . get_template_directory_uri() . '/assets/images/placeholder.jpg" class="image-circle" alt="">
 						<h3> <a href="' . get_page_link( $page->ID ) . '">';
-    $box .= $page->post_title;
+		if (empty(get_post_meta( $page->ID, 'menu-title', true ))) {
+			$box .= $page->post_title;
+		} else {
+			$box .= get_post_meta( $page->ID, 'menu-title', true );
+		}
 		$box .= '</a></h3><a href="' . get_page_link( $page->ID ) . '"><p>';
 		$box .= $page->post_subtitle;
 		$box .= get_post_meta( $page->ID, 'subtitle', true );
