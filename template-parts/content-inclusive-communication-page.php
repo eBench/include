@@ -14,7 +14,7 @@
 
 	<header class="entry-header masthead-lrg grid ">
 		<?php the_title( '<h1 class="colored-title">', '</h1>' ); ?>
-		<blockquote><?php echo get_post_meta( get_the_ID(), 'subtitle', true ); ?></blockquote>
+		<blockquote><?php echo get_post_meta( get_the_ID(), 'heading_qoute', true ); ?></blockquote>
 	</header><!-- .entry-header -->
 	<!-- Masthead end -->
 
