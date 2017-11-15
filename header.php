@@ -60,30 +60,10 @@
 				</nav> -->
 				<div class="button-group">
 					<a href="#" class="btn btn-positive" id="get-involved">Get involved</a>
-					<a href="template-menu.html" class="btn">Menu<i class="fa fa-bars fa-lg icon-right"></i></a>
+					<a href="" class="btn">Menu<i class="fa fa-bars fa-lg icon-right"></i></a>
 				</div>
 			</div>
 	</header>
-<!-- Colored title logic -->
-
-
-<span class="color-purple">Making</span>
-<span class="color-blue">the</span>
-<span class="color-green">world</span>
-<span class="color-sunflower">a</span>
-<span class="color-amber">more</span>
-<span class="color-purple">welcoming</span>
-<span class="color-blue">place</span>
-<span class="color-green">for</span>
-<span class="color-sunflower">people</span>
-<span class="color-amber">with</span>
-<span class="color-purple">communication</span>
-<span class="color-blue">&amp;
-<span class="color-green">understanding</span>
-<span class="color-sunflower">difficulties</span>
-</span>
-
-<!-- end -->
 
 <!-- Header end -->
 
