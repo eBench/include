@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<!-- Masthead start -->
 
-	<header class="entry-header masthead-lrg grid ">
+	<header class="entry-header masthead-lrg grid">
 		<?php the_title( '<h1 class="colored-title">', '</h1>' ); ?>
 		<blockquote><?php echo get_post_meta( get_the_ID(), 'heading_qoute', true ); ?></blockquote>
 	</header><!-- .entry-header -->
@@ -23,6 +23,7 @@
 		  <div class="main-content grid">
 		    <div class="row">
 		      <div class="col-4 hide-small">
+		        <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" alt="">
 		        <img src="<?php echo get_post_meta( get_the_ID(), 'image_1', true ); ?>" alt="">
 		        <img src="<?php echo get_post_meta( get_the_ID(), 'image_2', true ); ?>" alt="">
 		        <img src="<?php echo get_post_meta( get_the_ID(), 'image_3', true ); ?>" alt="">

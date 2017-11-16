@@ -37,6 +37,8 @@
 	 'meta_key' => 'show_in_menu',
 	 'meta_value' => 'true',
 	 'child_of' => '2',
+	 'sort_order' => 'asc',
+	 'sort_column' => 'menu_order'
 	 );
   $pages = get_pages($args);
 	$index = 0;
@@ -56,7 +58,7 @@
 			$box .='amber';
 		};
 		$box .= '">';
-		$box .=	'<img src="' . get_the_post_thumbnail_url($page->ID, 'full') . '" class="image-circle" alt="">
+		$box .=	'<img src="' . get_the_post_thumbnail_url($page->ID, 'thumbnail') . '" class="image-circle" alt="">
 						<h3> <a href="' . get_page_link( $page->ID ) . '">';
 		if (empty(get_post_meta( $page->ID, 'menu-title', true ))) {
 			$box .= $page->post_title;
@@ -64,9 +66,7 @@
 			$box .= get_post_meta( $page->ID, 'menu-title', true );
 		}
 		$box .= '</a></h3><a href="' . get_page_link( $page->ID ) . '"><p>';
-		$box .= $page->post_subtitle;
 		$box .= get_post_meta( $page->ID, 'subtitle', true );
-
 		$box .='</a></p></div></div>';
     echo $box;
   }

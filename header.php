@@ -33,7 +33,7 @@
 			<hr class="multi-color-bar">
 			<div class="site-header grid fluid">
 				<?php
-					if (get_the_ID() === 24 || get_the_ID() === 66) {
+					if (get_the_ID() === 24 || get_the_ID() === 66 || get_the_ID() === 86) {
 					?>
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-include-choir.svg" class="logo-include-org" alt="Include.org"></a>
 				<?php
@@ -74,6 +74,8 @@
 				 'meta_key' => 'show_in_menu',
 				 'meta_value' => 'true',
 				 'child_of' => '2',
+				 'sort_order' => 'asc',
+				 'sort_column' => 'menu_order'
 			 	 );
 		   $pages = get_pages($args);
 		 	 $index = 0;

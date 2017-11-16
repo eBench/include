@@ -10,7 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	<header class="entry-header masthead-lrg grid">
 		<?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -19,36 +19,48 @@
 		endif;
 
 		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
+		<!-- <div class="entry-meta">
 			<?php include_posted_on(); ?>
-		</div><!-- .entry-meta -->
+		</div>--><!-- .entry-meta -->
 		<?php
 		endif; ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content">
-		<?php
-			the_content( sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'include' ),
-					array(
-						'span' => array(
-							'class' => array(),
+	<div class="entry-content main-content grid">
+		<div class="row">
+			<div class="col-4 hide-small">
+				<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" alt="">
+				<img src="<?php echo get_post_meta( get_the_ID(), 'image_1', true ); ?>" alt="">
+				<img src="<?php echo get_post_meta( get_the_ID(), 'image_2', true ); ?>" alt="">
+				<img src="<?php echo get_post_meta( get_the_ID(), 'image_3', true ); ?>" alt="">
+			</div>
+
+			<div class="col-8 col-small-12">
+				<?php
+					the_content( sprintf(
+						wp_kses(
+							/* translators: %s: Name of current post. Only visible to screen readers */
+							__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'include' ),
+							array(
+								'span' => array(
+									'class' => array(),
+								),
+							)
 						),
-					)
-				),
-				get_the_title()
-			) );
+						get_the_title()
+					) );
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'include' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
-
+					wp_link_pages( array(
+						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'include' ),
+						'after'  => '</div>',
+					) );
+				?>
+			</div>
+	</div>
 	<footer class="entry-footer">
 		<?php include_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
+</div><!-- .entry-content -->
+
+
 </article><!-- #post-<?php the_ID(); ?> -->
