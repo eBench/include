@@ -16,15 +16,13 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-
-
 	<link href="https://fonts.googleapis.com/css?family=Arimo:400,400i,700|Quicksand:500" rel="stylesheet">
 	<script src="https://use.fontawesome.com/2bb93bf686.js"></script>
 	<script
 	src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 	integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
 	crossorigin="anonymous"></script>
-	<script src="<?php echo get_template_directory_uri(); ?>/assets/js/include.js"</script>
+	<script src="<?php echo get_template_directory_uri(); ?>/assets/js/include.js"></script>
 	<?php wp_head(); ?>
 </head>
 
@@ -35,7 +33,7 @@
 			<hr class="multi-color-bar">
 			<div class="site-header grid fluid">
 				<?php
-					if (get_the_ID() === 24) {
+					if (get_the_ID() === 24 || get_the_ID() === 66) {
 					?>
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-include-choir.svg" class="logo-include-org" alt="Include.org"></a>
 				<?php
@@ -107,10 +105,10 @@
 		</ul>
     <ul class="secondary-links">
       <li class="menu-item">
-        <a class="color-blue" href="#">Get involved</a>
+        <a class="color-blue" href="<?php echo esc_url( get_page_link( 63 ) ); ?>">Get involved</a>
       </li>
       <li class="menu-item">
-        <a class="color-blue" href="#">Contact us</a>
+        <a class="color-blue" href="<?php echo esc_url( get_page_link( 68 ) ); ?>">Contact us</a>
       </li>
     </ul>
   </div>
