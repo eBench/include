@@ -1038,10 +1038,10 @@ p {
 p a,
 .text-link {
   color: #0879b5;
-  text-decoration: underline; }
+  text-decoration: none; }
   p a:hover,
   .text-link:hover {
-    text-decoration: none; }
+    text-decoration: underline; }
 
 .text-large {
   font-size: 1.25em; }

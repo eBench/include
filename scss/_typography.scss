@@ -2,13 +2,13 @@
 
 body {
   color: $gray-800;
-	font-family: 'Arimo', sans-serif; 
+	font-family: 'Arimo', sans-serif;
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 1.5;
 }
 
-h1, 
+h1,
 h2,
 h3,
 h4 {
@@ -90,9 +90,9 @@ p {
 p a,
 .text-link {
   color: $blue;
-  text-decoration: underline;
+  text-decoration: none;
   &:hover {
-    text-decoration: none;
+    text-decoration: underline;
   }
 }
 
