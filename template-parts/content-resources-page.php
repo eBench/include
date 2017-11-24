@@ -32,26 +32,56 @@
 		    <!--Resources start-->
 
 		    <div class="resources row">
-					<?php
-				  $args = array(
-				 	 'category' => '2'
-				 	 );
-				   $posts = get_posts($args);
-				   foreach ( $posts as $post ) {
-				    $post_box = '<div class="col-3 col-small-6">';
-				 		$post_box .=	 '<a href="' .  esc_url(get_page_link( $post->ID )) . '">';
-						$post_box .=	'<img src="' . get_the_post_thumbnail_url($post->ID, 'full') .'" alt="">';
-						$post_box .= '</a><span><a href="' .   esc_url(get_page_link( $post->ID )) . '">';
-				 		$post_box .= $post->post_title;
-				 		$post_box .= '</a><br>';
-						$post_box .= get_the_excerpt( $post->ID);
-				 		$post_box .='</span></div>';
-				    echo $post_box;
-				   }
-				  ?>
-				</div>
+					<?php if( have_rows('resources') ):
+									while ( have_rows('resources') ) : the_row();
+										$source_title = get_sub_field('source_title');
+										$source_description = get_sub_field('source_description');
+										$source_image = get_sub_field('source_image');
+										$source_alt_text = get_sub_field('source_alt_text');
+										$source_file = get_sub_field('source_file');
+										$external_source_url = get_sub_field('external_source_url');
+									?>
+									<div class="col-3 col-small-6">
+										<?php
+											if(get_sub_field('source_file')) {
+											?>
+								   			<a href="<?php echo $source_file; ?>">
+										<?php
+											}
+										?>
+										<?php
+											if(get_sub_field('external_source_url')) {
+											?>
+								   			<a href="<?php echo $external_source_url; ?>">
+										<?php
+											}
+										?>
+									<img src="<?php echo $source_image; ?>" alt="<?php echo $source_alt_text; ?>">
+									</a><span>
+										<?php
+											if(get_sub_field('source_file')) {
+											?>
+												<a href="<?php echo $source_file; ?>">
+										<?php
+											}
+										?>
+										<?php
+											if(get_sub_field('external_source_url')) {
+											?>
+												<a href="<?php echo $external_source_url; ?>">
+										<?php
+											}
+										?>
+										<?php echo $source_title; ?></a><br>
+									<?php echo $source_description; ?>
+								</span>
+							</div>
+										<?php
+										endwhile;
+									else :	endif;
+								?>
+							</div>
 		    <!--Resources end-->
-
 		  </div>
 		  <!-- Content end -->
 

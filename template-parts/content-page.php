@@ -33,9 +33,14 @@
 		    <div class="row">
 		      <div class="col-4 hide-small">
 		        <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" alt="">
-		        <img src="<?php echo get_post_meta( get_the_ID(), 'image_1', true ); ?>" alt="">
-		        <img src="<?php echo get_post_meta( get_the_ID(), 'image_2', true ); ?>" alt="">
-		        <img src="<?php echo get_post_meta( get_the_ID(), 'image_3', true ); ?>" alt="">
+						<?php if( have_rows('images') ):
+										while ( have_rows('images') ) : the_row();
+											$image_url = get_sub_field('image');
+											$alt_text = get_sub_field('alt_text');
+										?>
+											<img src="<?php echo $image_url; ?>" alt="<?php echo $alt_text; ?>">
+						<?php endwhile;
+									else :	endif;?>
 		      </div>
 
 		      <div class="col-8 col-small-12">
@@ -89,13 +94,14 @@
 		    <!--Stats end-->
 
 		    <!--Centered link start-->
+
 				<?php
-					if (!empty (get_post_meta( get_the_ID(), 'annual_report', true ))) {
+					if(get_field('annual_report')) {
 					?>
 		    <div class="row">
 		      <div class="col text-center">
 		        <i class="fa fa-file-pdf-o"></i><a class="text-large text-link"
-							 href="<?php echo get_post_meta( get_the_ID(), 'annual_report', true ) ?>">Download our Annual Report</a>
+							 href="<?php the_field('annual_report'); ?>">Download our Annual Report</a>
 		      </div>
 		    </div>
 				<?php
@@ -109,43 +115,48 @@
 
 			<!-- Quote start -->
 			<?php
-				if (!empty (get_post_meta( get_the_ID(), 'quote_text', true ))) {
+				if (get_field('quote_text')) {
 				?>
 		  <div class="fluid bg-light-blue">
 		    <div class="quote grid">
-		      <img src="<?php echo get_post_meta( get_the_ID(), 'quote_image', true ); ?>" class="image-circle" alt="">
-		      <blockquote><?php echo get_post_meta( get_the_ID(), 'quote_text', true ); ?></blockquote>
-		      <span class="color-light-gray"><?php echo get_post_meta( get_the_ID(), 'quote_author', true ); ?></span>
+		      <img src="<?php echo the_field('quote_image'); ?>" class="image-circle" alt="">
+		      <blockquote><?php echo the_field('quote_text'); ?></blockquote>
+		      <span class="color-light-gray"><?php echo the_field('quote_author'); ?></span>
 		    </div>
 		  </div>
 			<?php
 				}
 			?>
+
+
+		</div>
+
+
+
 		  <!-- Quote end -->
 			<!-- Members quotes start -->
-			<?php
-				if (!empty (get_post_meta( get_the_ID(), 'member_quote_1_text', true ))) {
-				?>
-			<div class="fluid bg-light-blue">
-				<div class="quote grid">
-					<h3>What our members say...</h3>
-					<blockquote><?php echo get_post_meta( get_the_ID(), 'member_quote_1_text', true ); ?></blockquote>
-					<span class="color-light-gray"><?php echo get_post_meta( get_the_ID(), 'member_quote_1_name', true ); ?></span>
-					<blockquote><?php echo get_post_meta( get_the_ID(), 'member_quote_2_text', true ); ?></blockquote>
-					<span class="color-light-gray"><?php echo get_post_meta( get_the_ID(), 'member_quote_2_name', true ); ?></span>
-					<blockquote><?php echo get_post_meta( get_the_ID(), 'member_quote_3_text', true ); ?></blockquote>
-					<span class="color-light-gray"><?php echo get_post_meta( get_the_ID(), 'member_quote_3_name', true ); ?></span>
-					<blockquote><?php echo get_post_meta( get_the_ID(), 'member_quote_4_text', true ); ?></blockquote>
-					<span class="color-light-gray"><?php echo get_post_meta( get_the_ID(), 'member_quote_4_name', true ); ?></span>
-					<blockquote><?php echo get_post_meta( get_the_ID(), 'member_quote_5_text', true ); ?></blockquote>
-					<span class="color-light-gray"><?php echo get_post_meta( get_the_ID(), 'member_quote_5_name', true ); ?></span>
-				</div>
-			</div>
-			<?php
-				}
-			?>
+
+				<?php if( have_rows('quotes') ): ?>
+					<div class="fluid bg-light-blue">
+						<div class="quote grid">
+
+							<h3>What our members say...</h3>
+							<?php	while ( have_rows('quotes') ) : the_row();
+									$quote_text = get_sub_field('quote_text');
+									$member_name = get_sub_field('member_name');
+								?>
+								<blockquote><?php echo $quote_text; ?></blockquote>
+								<span class="color-light-gray"><?php echo $member_name; ?></span>
+
+									<?php
+								endwhile; ?>
+							</div>
+						</div>
+					<?php else :	endif; ?>
+
+
 			<!-- Members quotes end -->
-			
+
 
 			<!-- Boxouts start -->
 			<div class="boxouts grid gutterless fluid-gutterless">

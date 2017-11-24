@@ -42,7 +42,7 @@
  <?php
  $args = array(
 	 'meta_key' => 'show_in_menu',
-	 'meta_value' => 'true',
+	 'meta_value' => true,
 	 'child_of' => '2',
 	 'sort_order' => 'asc',
 	 'sort_column' => 'menu_order'
