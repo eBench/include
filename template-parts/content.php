@@ -11,6 +11,18 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header masthead-lrg grid">
+		<div>
+			<?php
+				$categories =  get_the_category( $post->ID );
+				if ($categories[0]->term_id === 2 ) { ?>
+				<i class="fa fa-arrow-left" aria-hidden="true"></i>
+				<a class="text-large text-link"
+				href="<?php echo get_permalink( 66 ); ?>">
+				Back to <?php echo get_the_title( 66 ); ?></a>
+				</a>
+			<?php } ?>
+
+    </div>
 		<?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -57,9 +69,7 @@
 				?>
 			</div>
 	</div>
-	<footer class="entry-footer">
-		<?php include_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+
 </div><!-- .entry-content -->
 
 

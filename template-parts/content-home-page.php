@@ -13,7 +13,14 @@
 	<!-- Masthead start -->
 
 	<header class="entry-header masthead-lrg grid ">
-		<?php the_title( '<h1 class="colored-title">', '</h1>' ); ?>
+		<?php
+			if (empty(get_post_meta( get_the_ID(), 'different_title', true ))) {
+				$title = the_title( '<h1 class="colored-title">', '</h1>' );
+			} else {
+				$title = '<h1 class="colored-title">' . get_post_meta( get_the_ID(), 'different_title', true ) . '</h1>';
+			}
+			echo $title;
+    ?>
 	</header><!-- .entry-header -->
 	<!-- Masthead end -->
 
@@ -66,7 +73,7 @@
 			$box .= get_post_meta( $page->ID, 'menu-title', true );
 		}
 		$box .= '</a></h3><a href="' . get_page_link( $page->ID ) . '"><p>';
-		$box .= get_post_meta( $page->ID, 'subtitle', true );
+		$box .= get_post_meta( $page->ID, 'excerpt', true );
 		$box .='</a></p></div></div>';
     echo $box;
   }

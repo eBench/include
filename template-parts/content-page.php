@@ -13,8 +13,17 @@
 	<!-- Masthead start -->
 
 	<header class="entry-header masthead-lrg grid">
-		<?php the_title( '<h1 class="colored-title">', '</h1>' ); ?>
-		<blockquote><?php echo get_post_meta( get_the_ID(), 'heading_qoute', true ); ?></blockquote>
+
+		<?php
+			if (empty(get_post_meta( get_the_ID(), 'different_title', true ))) {
+				$title = the_title( '<h1 class="colored-title">', '</h1>' );
+			} else {
+				$title = '<h1 class="colored-title">' . get_post_meta( get_the_ID(), 'different_title', true ) . '</h1>';
+			}
+			echo $title;
+    ?>
+
+		<blockquote><?php echo get_post_meta( get_the_ID(), 'heading_subtitle', true ); ?></blockquote>
 	</header><!-- .entry-header -->
 	<!-- Masthead end -->
 
@@ -115,77 +124,40 @@
 		  <!-- Quote end -->
 			<!-- Members quotes start -->
 			<?php
-				if (!empty (get_post_meta( get_the_ID(), 'member_qoute_1_text', true ))) {
+				if (!empty (get_post_meta( get_the_ID(), 'member_quote_1_text', true ))) {
 				?>
 			<div class="fluid bg-light-blue">
 				<div class="quote grid">
 					<h3>What our members say...</h3>
-					<blockquote><?php echo get_post_meta( get_the_ID(), 'member_qoute_1_text', true ); ?></blockquote>
-					<span class="color-light-gray"><?php echo get_post_meta( get_the_ID(), 'member_qoute_1_name', true ); ?></span>
-					<blockquote><?php echo get_post_meta( get_the_ID(), 'member_qoute_2_text', true ); ?></blockquote>
-					<span class="color-light-gray"><?php echo get_post_meta( get_the_ID(), 'member_qoute_2_name', true ); ?></span>
-					<blockquote><?php echo get_post_meta( get_the_ID(), 'member_qoute_3_text', true ); ?></blockquote>
-					<span class="color-light-gray"><?php echo get_post_meta( get_the_ID(), 'member_qoute_3_name', true ); ?></span>
-					<blockquote><?php echo get_post_meta( get_the_ID(), 'member_qoute_4_text', true ); ?></blockquote>
-					<span class="color-light-gray"><?php echo get_post_meta( get_the_ID(), 'member_qoute_4_name', true ); ?></span>
-					<blockquote><?php echo get_post_meta( get_the_ID(), 'member_qoute_5_text', true ); ?></blockquote>
-					<span class="color-light-gray"><?php echo get_post_meta( get_the_ID(), 'member_qoute_5_name', true ); ?></span>
+					<blockquote><?php echo get_post_meta( get_the_ID(), 'member_quote_1_text', true ); ?></blockquote>
+					<span class="color-light-gray"><?php echo get_post_meta( get_the_ID(), 'member_quote_1_name', true ); ?></span>
+					<blockquote><?php echo get_post_meta( get_the_ID(), 'member_quote_2_text', true ); ?></blockquote>
+					<span class="color-light-gray"><?php echo get_post_meta( get_the_ID(), 'member_quote_2_name', true ); ?></span>
+					<blockquote><?php echo get_post_meta( get_the_ID(), 'member_quote_3_text', true ); ?></blockquote>
+					<span class="color-light-gray"><?php echo get_post_meta( get_the_ID(), 'member_quote_3_name', true ); ?></span>
+					<blockquote><?php echo get_post_meta( get_the_ID(), 'member_quote_4_text', true ); ?></blockquote>
+					<span class="color-light-gray"><?php echo get_post_meta( get_the_ID(), 'member_quote_4_name', true ); ?></span>
+					<blockquote><?php echo get_post_meta( get_the_ID(), 'member_quote_5_text', true ); ?></blockquote>
+					<span class="color-light-gray"><?php echo get_post_meta( get_the_ID(), 'member_quote_5_name', true ); ?></span>
 				</div>
 			</div>
 			<?php
 				}
 			?>
 			<!-- Members quotes end -->
-			<!-- Choir Boxouts tart -->
-			<?php
-				if (get_the_ID() === 24) {
-				?>
-			  <div class="boxouts grid gutterless fluid-gutterless">
-			    <div class="row row-equal">
-			      <!-- Boxout start -->
-			      <div class="col">
-			        <div class="boxout bg-purple">
-			          <h3><a href="<?php echo esc_url( get_page_link( 39 ) ); ?>">I want to join</a></h3>
-			        </div>
-			      </div>
-			      <!-- Boxout end -->
-
-			      <!-- Boxout start -->
-			      <div class="col">
-			        <div class="boxout bg-blue">
-			          <h3><a href="<?php echo esc_url( get_page_link( 45 ) ); ?>">I want to set up my own choir</a></h3>
-			        </div>
-			      </div>
-			      <!-- Boxout end -->
-
-			      <!-- Boxout start -->
-			      <div class="col">
-			        <div class="boxout bg-green">
-			          <h3><a href="#">I want to donate (via PayPal)</a></h3>
-			        </div>
-			      </div>
-			      <!-- Boxout end -->
-
-			      <!-- Boxout start -->
-			      <div class="col">
-			        <div class="boxout bg-sunflower">
-			          <h3><a href="<?php echo esc_url( get_page_link( 47 ) ); ?>">I want to book the Include Choir</a></h3>
-			        </div>
-			      </div>
-			      <!-- Boxout end -->
-			    </div>
-			  </div>
-				<?php
-					}
-				?>
-			  <!-- Choir Boxouts end -->
+			
 
 			<!-- Boxouts start -->
 			<div class="boxouts grid gutterless fluid-gutterless">
 				<div class="row row-equal">
 					<!-- Boxout start -->
 			 <?php
-			  $args = array('exclude' => '2', 'number' => '2');
+			 $current_id = get_the_ID();
+			 $args = array(
+				 'child_of' =>  $current_id,
+				 'sort_order' => 'asc',
+				 'sort_column' => 'menu_order'
+				 );
 			  $pages = get_pages($args);
 				$index = 0;
 			  foreach ( $pages as $page ) {
@@ -203,18 +175,12 @@
 					} else if (($index % 5 ) === 0 ) {
 						$box .='amber';
 					};
-					$box .= ' bg-pattern-'. $index .'">';
-					$box .=	'<img src="' . get_template_directory_uri() . '/assets/images/placeholder.jpg" class="image-circle" alt="">
+					$box .= '">';
+					$box .=	'<img src="' . get_the_post_thumbnail_url($page->ID, 'thumbnail') . '" class="image-circle" alt="">
 									<h3> <a href="' . get_page_link( $page->ID ) . '">';
-					if (empty(get_post_meta( $page->ID, 'menu-title', true ))) {
-						$box .= $page->post_title;
-					} else {
-						$box .= get_post_meta( $page->ID, 'menu-title', true );
-					}
+					$box .= $page->post_title;
 					$box .= '</a></h3><a href="' . get_page_link( $page->ID ) . '"><p>';
-					$box .= $page->post_subtitle;
-					$box .= get_post_meta( $page->ID, 'subtitle', true );
-
+					$box .= get_post_meta( $page->ID, 'excerpt', true );
 					$box .='</a></p></div></div>';
 			    echo $box;
 			  }

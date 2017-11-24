@@ -95,11 +95,7 @@
 		 				$link .='amber';
 		 			};
 		 		 $link .= '" href="' . get_page_link( $page->ID ) . '">';
-				 if (empty(get_post_meta( $page->ID, 'menu-title', true ))) {
-		 				$link .= $page->post_title;
-		 		 } else {
-		 				$link .= get_post_meta( $page->ID, 'menu-title', true );
-		 		 }
+				 $link .= $page->post_title;
 		 		 $link .= '</a></li>';
 		     echo $link;
 		   }
