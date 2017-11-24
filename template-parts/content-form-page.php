@@ -11,7 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<!-- Masthead start -->
-	<header class="entry-header masthead-lrg grid ">
+	<header class="entry-header masthead grid ">
 		<div>
 			<?php if ( $post->post_parent ) { ?>
 				<i class="fa fa-arrow-left" aria-hidden="true"></i>

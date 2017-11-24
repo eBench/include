@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<!-- Masthead start -->
 
-	<header class="entry-header masthead-lrg grid ">
+	<header class="entry-header masthead grid ">
 		<?php the_title( '<h1 class="colored-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 	<!-- Masthead end -->

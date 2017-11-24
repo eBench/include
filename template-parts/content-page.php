@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<!-- Masthead start -->
 
-	<header class="entry-header masthead-lrg grid">
+	<header class="entry-header masthead grid">
 
 		<?php
 			if (empty(get_post_meta( get_the_ID(), 'different_title', true ))) {

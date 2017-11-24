@@ -10,7 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header masthead-lrg grid">
+	<header class="entry-header masthead grid">
 		<div>
 			<?php
 				$categories =  get_the_category( $post->ID );
