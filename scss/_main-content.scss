@@ -28,9 +28,15 @@
 		li::before {
 			content: "•";
 			color: $sunflower;
-		  display: inline-block; 
+		  display: inline-block;
 		  width: 1em;
 		  margin-left: -1em
+		}
+	}
+	ul.yt-videos {
+		li {
+			margin-right: 15px;
+			float: left;
 		}
 	}
 	@media screen and (max-width: 640px) {

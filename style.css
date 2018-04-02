@@ -674,6 +674,9 @@ select.form-control:focus::-ms-value {
       display: inline-block;
       width: 1em;
       margin-left: -1em; }
+  .main-content ul.yt-videos li {
+    margin-right: 15px;
+    float: left; }
   @media screen and (max-width: 640px) {
     .main-content {
       margin-bottom: 4em; } }
