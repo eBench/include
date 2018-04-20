@@ -39,6 +39,11 @@
 			float: left;
 		}
 	}
+	.full-subscribe-button {
+		display: inline-block;
+		width: 100%;
+		text-align: center;
+	}
 	@media screen and (max-width: 640px) {
     margin-bottom: 4em;
   }

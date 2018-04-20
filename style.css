@@ -677,6 +677,10 @@ select.form-control:focus::-ms-value {
   .main-content ul.yt-videos li {
     margin-right: 15px;
     float: left; }
+  .main-content .full-subscribe-button {
+    display: inline-block;
+    width: 100%;
+    text-align: center; }
   @media screen and (max-width: 640px) {
     .main-content {
       margin-bottom: 4em; } }
