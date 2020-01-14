@@ -48,3 +48,17 @@
     margin-bottom: 4em;
   }
 }
+
+
+.icon-donate {
+	display: none;
+	@media screen and (max-width: 640px) {
+		display: inline-block;
+	}
+}
+
+.text-donate-btn {
+	@media screen and (max-width: 640px) {
+		display: none;
+	}
+}

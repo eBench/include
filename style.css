@@ -52,7 +52,8 @@
 @media screen and (max-width: 640px) {
   .logo-include-org,
   .logo-include-choir {
-    height: 48px; } }
+    height: 28px;
+    margin-top: 10px; } }
 
 /* Multi-color bar */
 .multi-color-bar {
@@ -97,6 +98,14 @@
   background-color: #5fb346; }
   .btn-positive:hover {
     background-color: #7dc468; }
+
+.btn-donate {
+  background-color: #d961a8; }
+  .btn-donate:hover {
+    background-color: #f3ae22; }
+  @media screen and (max-width: 640px) {
+    .btn-donate {
+      padding: 9px 15px; } }
 
 /* Block buttons */
 .btn-block {
@@ -646,6 +655,13 @@ select.form-control:focus::-ms-value {
 .fa + a {
   margin-left: .5em; }
 
+.icon-donate {
+  background: url("./assets/images/donate.svg") center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px; }
+
 /* Main content */
 .main-content {
   margin-bottom: 6em; }
@@ -684,6 +700,16 @@ select.form-control:focus::-ms-value {
   @media screen and (max-width: 640px) {
     .main-content {
       margin-bottom: 4em; } }
+
+.icon-donate {
+  display: none; }
+  @media screen and (max-width: 640px) {
+    .icon-donate {
+      display: inline-block; } }
+
+@media screen and (max-width: 640px) {
+  .text-donate-btn {
+    display: none; } }
 
 /* Organism – Call to action block */
 .cta {

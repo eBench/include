@@ -64,7 +64,8 @@
 			<?php
 			endif; ?> -->
 				<div class="button-group">
-					<a href="<?php echo esc_url( get_page_link( 63 ) ); ?>" class="btn btn-positive" id="get-involved">Get involved</a>
+                                        <a href="https://www.goldengiving.com/secure/direct-debit/create/include-choir" target="_blank" class="btn btn-donate"><span class="text-donate-btn">Donate</span><i class="icon-donate"></i></a>
+                                   	<a href="<?php echo esc_url( get_page_link( 63 ) ); ?>" class="btn btn-positive" id="get-involved">How can I help?</a>
 					<a class="btn js-menu">Menu<i class="fa fa-bars fa-lg icon-right"></i></a>
 					<a class="btn js-menu" style="display:none">Menu<i class="fa fa-times fa-lg icon-right"></i></a>
 				</div>

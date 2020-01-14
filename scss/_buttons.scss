@@ -41,6 +41,16 @@
   }
 }
 
+.btn-donate {
+	 background-color: rgb(217,97,168);
+	&:hover {
+		background-color: rgb(243,174,34);
+	}
+	
+	@media screen and (max-width: 640px) {
+		padding: 9px 15px;
+	}
+}
 /* Block buttons */
 
 .btn-block {
